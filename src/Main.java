@@ -1,13 +1,16 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("Задание 1");
-        String firstName = "Ivan";
-        String middleName = "Ivanovich";
-        String lastName = "Ivanov";
-        String check = "IvanovIvanIvanovich";
+        String firstName = "IvaN";
+        String middleName = "ivanovicH";
+        String lastName = "ivanov";
+        String check = "Ivanov Ivan Ivanovich";
         firstName = firstName.replace(" ", "");
         middleName = middleName.replace(" ", "");
         lastName = lastName.replace(" ", "");
+        firstName = firstName.toLowerCase();
+        middleName = middleName.toLowerCase();
+        lastName = lastName.toLowerCase();
         if (firstName.isEmpty()) {
             throw new RuntimeException("line is empty");
         } else if (middleName.isEmpty()) {
@@ -19,16 +22,18 @@ public class Main {
             firstName = firstName.replace('i', 'I');
         }
         if (middleName.charAt(0) == 'i') {
-            middleName = middleName.replace('i', 'I');
+            middleName = 'I' + middleName.substring(1);
         }
         if (lastName.charAt(0) == 'i') {
             lastName = lastName.replace('i', 'I');
         }
-        String fullName = lastName + firstName + middleName;
+        String fullName = lastName + " " + firstName + " " + middleName;
         if (fullName.equals(check)) {
-            System.out.printf(lastName + " " + firstName + " " + middleName);
+            System.out.println(fullName);
         } else {
             throw new RuntimeException("no matches found");
         }
+        System.out.println("Задание 2");
+        System.out.println("Данные Ф. И. О. сотрудника для заполнения отчета — " + fullName.toUpperCase());
     }
 }
