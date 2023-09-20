@@ -35,5 +35,15 @@ public class Main {
         }
         System.out.println("Задание 2");
         System.out.println("Данные Ф. И. О. сотрудника для заполнения отчета — " + fullName.toUpperCase());
+
+        System.out.println("Задание 3");
+        fullName = "Иванов Семён Семёнович";
+        check = "Иванов Семен Семенович";
+        fullName = fullName.replace('ё', 'е');
+        if (fullName.equals(check)) {
+            System.out.println("Данные Ф. И. О. сотрудника — " + fullName);
+        } else {
+            System.out.println("Некорректно введенные данные");
+        }
     }
 }
